@@ -1,0 +1,17 @@
+{% extends 'home.html' %}
+{% block contenido %}
+{% load static%}
+<form method="POST" class="form-container">
+    <h2>Registro de Socios</h2>
+    <div id="contenedor_img">
+      <img src="{% static 'logo.png' %}" alt="" width="60px">
+    </div>
+
+    {% csrf_token %}
+  
+ {{form_socio }}
+    
+
+    <button type="submit">Logout</button>
+  </form>
+{% endblock %}

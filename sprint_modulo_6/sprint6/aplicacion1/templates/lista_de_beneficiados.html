@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block contenido %}
+
+<h1> BENEFICIADOS</h1>
+ <div class="w3-row w3-justify-content" style="border:2px solid red; min-height: 100px;">
+<div class="w3-col w3-third  w3-center" style="border:2px solid red">
+    
+    <table class="w3-table">
+<thead>
+
+       <thead>
+        <tr><th>Nombre</th> <th>Apellido</th> <th>Email</th>
+         </tr>
+
+       </thead> 
+
+
+</thead>
+<tbody>
+
+    {% for beneficiado in beneficiados %}
+<tr><td>    {{beneficiado.user.first_name}}</td> 
+    <td>    {{beneficiado.user.last_name}}</td> 
+    <td>    {{beneficiado.user.email}}</td>
+</tr>
+
+{% endfor %}
+</tbody>
+
+
+</table>
+</div>
+
+</div>
+
+
+{% endblock %}

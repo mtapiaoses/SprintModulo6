@@ -1,0 +1,22 @@
+{% extends 'home.html' %}
+{% block contenido %}
+{% load static%}
+ <div class="w3-row w3-justify-content">
+<div class="w3-col w3-third  w3-center" 
+  <h1>Beneficiados</h1>
+    <h2>Registro de Beneficiados</h2>
+    <div id="contenedor_img">
+      <img src="{% static 'logo1.png' %}" alt="" width="60px">
+    </div>
+
+<form method="POST" >
+
+    {% csrf_token %}
+  
+ {{formulario}}
+    
+
+    <button type="submit">Login</button>
+  </form>
+</div>
+{% endblock %}
