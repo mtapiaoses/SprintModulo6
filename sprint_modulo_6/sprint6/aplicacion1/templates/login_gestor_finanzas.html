@@ -1,0 +1,23 @@
+{% extends 'home.html' %}
+{% block contenido %}
+{% load static%}
+<div style="background-color: red; color:white"><h1> !!SOLO PERSONAL AUTORIZADO¡¡</h1></div>
+
+ <div class="w3-row w3-justify-content" >
+<div class="w3-col w3-third  w3-center" >
+<form method="POST" class="form-container">
+    <h2>Login Gestor Finanzas</h2>
+    <div id="contenedor_img">
+      <img src="{% static 'logo1.png' %}" alt="" width="60px">
+    </div>
+
+    {% csrf_token %}
+  
+ {{formulario }}
+    
+
+     <button type="submit" class="w3-button w3-black">Login</button>
+  </form>
+  </div>
+ </div>
+{% endblock %}

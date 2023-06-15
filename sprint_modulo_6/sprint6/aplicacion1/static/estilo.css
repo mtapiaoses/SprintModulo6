@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+body, html {
+  height: 100%;
+  line-height: 1.8;
+
+}
+body{  padding-top: 100px;
+
+}
+
+
+.bgimg-1 {
+  background-position: center;
+  background-size: cover;
+  background-image: url("/w3images/mac.jpg");
+  min-height: 100%;
+}
+
+.w3-bar .w3-button {
+  padding: 16px;
+}
+
+    .w3-justify-content {
+      display: flex;
+      justify-content: space-evenly;
+    }
+    .main h3,.main h1,  .main p{  color:black; font-family: 'Comfortaa', cursive; font-size: 40px;}
+    .main{
+      background-image: url('https://www.10wallpaper.com/wallpaper/1366x768/1404/hands_paint_children-Design_HD_Wallpaper_1366x768.jpg');
+      background-size: 100% 100%;
+      min-height: 700px;   
+      }
+    .w3-margin-bottom{margin-bottom: 1px;}
+    footer{margin-top: 10%;}

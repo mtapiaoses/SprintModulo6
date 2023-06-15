@@ -1,0 +1,89 @@
+{% extends 'base.html' %} {% block contenido %} {% load static%}
+
+<div class="w3-row ">
+  <div class="w3-third">
+    <h2>GESTOR DE FINANZAS</h2>
+    <div id="contenedor_img">
+      <img src="{% static 'logo1.png' %}" alt="" width="60px" />
+    </div>
+
+    <table class="w3-table">
+      <tbody>
+        <tr>
+          <td><h3>Username</h3></td>
+          <td><h3>{{user.username}}</h3></td>
+        </tr>
+        <tr>
+          <td>Nombre</td>
+          <td>{{user.first_name}}</td>
+        </tr>
+        <tr>
+          <td>Apellido</td>
+          <td>{{user.last_name}}</td>
+        </tr>
+      </tbody>
+    </table>
+    
+  </div>
+  <div class="w3-third w3-section">
+    <div class="w3-panel w3-card w3-padding-16">
+      <h3>Beneficios entregados</h3>
+      <table class="w3-table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Beneficio</th>
+            <th>Fecha</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for x in beneficios %}
+          <tr>
+            <td>{{x.beneficiado.user.first_name}}</td>
+            <td>{{x.beneficiado.user.last_name}}</td>
+            <td>$ {{x.total}}</td>
+            <td>{{x.fecha_creacion}}</td>
+          </tr>
+
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="w3-third">
+    <div class="w3-panel w3-card w3-padding-16">
+      <h3>Aportes</h3>
+      <h5> TOTAL APORTES :
+      {% if total_aporte == None %}
+    nada aun :(
+    {% else %}
+    $ {{total_aporte}}</h5>
+   {% endif %}
+      
+      <button class="w3-button w3-black"><a href="/entregar_beneficios/">REPARTIR LOS APORTES</a> </button>
+      <table class="w3-table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Aportes</th>
+            <th>Fecha</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for x in aportes %}
+          <tr>
+            <td>{{x.aportador.user.first_name}}</td>
+            <td>{{x.aportador.user.last_name}}</td>
+            <td>$ {{x.total}}</td>
+            <td>{{x.fecha_creacion}}</td>
+          </tr>
+
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}
